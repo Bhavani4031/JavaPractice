@@ -1,0 +1,14 @@
+# Ignore compiled Java classes
+*.class
+
+# Ignore Eclipse's bin folder
+bin/
+
+# Ignore build folder (Maven/Gradle)
+target/
+
+# Eclipse metadata
+.project
+.classpath
+.settings/
+
