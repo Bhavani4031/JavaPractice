@@ -1,4 +1,4 @@
-package Bhavani;
+package com.jt.Practice;
 
 /*
  * Method overloading 
@@ -21,8 +21,9 @@ public class CalculateVolume {
 		calculateVolume(4, 5, PI);
 	}
 	
-	static void calculateVolume(int a) {
-		System.out.println("Voulme of a Cube: " + (a * a * a));
+	public static int calculateVolume(int a) {
+		//System.out.println("Voulme of a Cube: " + (a * a * a));
+		return a*a*a;
 	}
 	
 	static void calculateVolume(int length, int base, int height) {

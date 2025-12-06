@@ -1,4 +1,4 @@
-package Bhavani;
+package com.jt.Practice;
 
 import java.util.*;
 
