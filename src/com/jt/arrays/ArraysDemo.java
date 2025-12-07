@@ -1,4 +1,4 @@
-package com.jt.Practice;
+package com.jt.arrays;
 
 public class ArraysDemo {
 
@@ -17,6 +17,9 @@ public class ArraysDemo {
         arr[2] = 8;
         arr[3] = 12;
         arr[4] = 16;
+        
+        //Length of the array
+        System.out.println("Length of an array: " +arr.length);
         
         //Accessing the elements of an array
         for(int i=0; i<arr.length; i++) {

@@ -1,6 +1,4 @@
-package com.jt.Practice;
-
-import static org.junit.jupiter.api.Assertions.*;
+package com.jt.practice;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;

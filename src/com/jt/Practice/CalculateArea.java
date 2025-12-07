@@ -1,4 +1,4 @@
-package com.jt.Practice;
+package com.jt.practice;
 
 /*
  * Method overloading 
