@@ -1,0 +1,22 @@
+MultiThreading
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Multithreading in Java is a feature that enables a program to run multiple threads simultaneously, allowing tasks to execute in parallel and utilize the CPU more efficiently. A thread is a lightweight, independent unit of execution inside a program (process).
+A process can have multiple threads.
+Each thread runs independently but shares the same memory.
+
+Example: Imagine a restaurant kitchen. Multiple chefs (threads) are preparing different dishes at the same time. This speeds up service and utilizes all available resources (CPU).
+
+Threads can be created by using two mechanisms:
+ * 1. Extending the Thread class
+ * 2. Implementing the Runnable interface
+ 
+When to Use Which?
+ * Use extends Thread: if your class does not extend any other class.
+ * Use implements Runnable: if your class already extends another class (preferred because Java doesn’t support multiple inheritance).
+
+Advantages of Multithreading in Java
+ * Improved Performance: Multiple tasks can run simultaneously, reducing execution time.
+ * Efficient CPU Utilization: Threads keep the CPU busy by running tasks in parallel.
+ * Responsiveness: Applications (like GUIs) remain responsive while performing background tasks.
+ * Resource Sharing: Threads within the same process share memory and resources, avoiding duplication.
+ * Better User Experience: Smooth execution of tasks like file downloads, animations, and real-time updates.
