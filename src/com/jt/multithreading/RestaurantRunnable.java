@@ -4,7 +4,9 @@ public class RestaurantRunnable {
 
 	public static void main(String[] args) {
 		
-		Thread t1 = new Thread(new CookingTask1("Pasta"));
+		CookingTask1 c = new CookingTask1("Pasta");
+		
+		Thread t1 = new Thread(c);
 		Thread t2 = new Thread(new CookingTask1("Burger"));
 		Thread t3 = new Thread(new CookingTask1("KFC"));
 		Thread t4 = new Thread(new CookingTask1("Pizza"));

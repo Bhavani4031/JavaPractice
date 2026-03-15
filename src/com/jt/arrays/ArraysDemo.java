@@ -26,6 +26,28 @@ public class ArraysDemo {
         	System.out.println("Element at index "+ i + ":" +arr[i]);
         }
         
+        String[] names = new String[] {"Bhavani", "Teja"};
+        
+        for(String name : names) {
+        	name = name.toUpperCase();
+        	System.out.println(name);
+        }
+        
+        for(int i=0; i<names.length; i++) {
+        	System.out.println("Element at index "+ i + ":" +names[i]);
+        }
+        
+        String[] places = new String[] {"Hyderabad", "Bangalore"};
+        
+        for(int i=0; i<places.length; i++) {
+        	places[i] = places[i].toUpperCase();
+        	System.out.println(places[i]);
+        }
+        
+        for(int i=0; i<places.length; i++) {
+        	System.out.println("Element at index "+ i + ":" +places[i]);
+        }
+        
         //Declaring an array of objects
         Student[] stu;
         

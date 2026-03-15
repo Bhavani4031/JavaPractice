@@ -1,5 +1,6 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 MultiThreading
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Multithreading in Java is a feature that enables a program to run multiple threads simultaneously, allowing tasks to execute in parallel and utilize the CPU more efficiently. A thread is a lightweight, independent unit of execution inside a program (process).
 A process can have multiple threads.
 Each thread runs independently but shares the same memory.
@@ -20,3 +21,144 @@ Advantages of Multithreading in Java
  * Responsiveness: Applications (like GUIs) remain responsive while performing background tasks.
  * Resource Sharing: Threads within the same process share memory and resources, avoiding duplication.
  * Better User Experience: Smooth execution of tasks like file downloads, animations, and real-time updates.
+
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Java Threads:
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+A Java thread is the smallest unit of execution within a program. 
+It is a lightweight subprocess that runs independently but shares the same memory space as the process, allowing multiple tasks to execute concurrently.
+
+We can create threads in java using two ways
+ * Extending Thread Class
+ * Implementing a Runnable interface
+ 
+1. By Extending Thread Class 
+	Create a class that extends Thread.
+	Override the run() method, this is where you put the code that the thread should execute. 
+	Then create an object of your class and call the start() method. 
+	This will internally call run() in a new thread.
+
+2. Using Runnable Interface
+	Create a class that implements Runnable.
+	Override the run() method, this contains the code for the thread.
+	Then create a Thread object, pass your Runnable object to it and call start().
+
+---------------------------------------------------------------------------------------------------------------
+Life Cycle of a Thread:
+---------------------------------------------------------------------------------------------------------------
+During its thread life cycle, a Java thread transitions through several states from creation to termination.
+ * New: Thread object is created but not started.
+ * Runnable: Thread is ready to run and waiting for CPU allocation.
+ * Running: Thread is executing its run() method.
+ * Waiting/Blocked: Thread waits for a resource or another thread.
+ * Terminated: Thread completes execution or is stopped.
+
+----------------------------------------------------------------------------------------------------------------
+Running Threads in Java
+----------------------------------------------------------------------------------------------------------------
+There are two methods used for running Threads in Java:
+	run() Method: Contains the code for the thread. Calling it directly behaves like a normal method call.
+	start() Method: Launches a new thread and internally calls run() concurrently.
+	
+Note: We use start() to launch a new thread, which then calls the run() method in parallel. If we call run() directly, it works like a normal method call and no new thread is created.
+
+-----------------------------------------------------------------------------------------------------------------
+Java Thread Class
+-----------------------------------------------------------------------------------------------------------------
+The Thread class is used to create and control threads in Java. Each object of this class represents a single thread of execution.
+
+	Syntax:   public class Thread extends Object implements Runnable
+
+Advantages of Threads
+ * Improved performance: Multiple threads can execute tasks concurrently.
+ * Better resource utilization: Threads share the same memory and resources.
+ * Responsive applications: UI applications remain responsive while performing background tasks.
+ 
+-----------------------------------------------------------------------------------------------------
+Thread.start() Method
+-----------------------------------------------------------------------------------------------------
+The start() method is used to begin a new thread of execution. 
+It performs two main tasks:
+	Allocates resources for a new thread.
+	Calls the run() method internally in the new thread.
+
+ Calling start() creates a new thread. run() is executed in the context of that new thread.
+
+----------------------------------------------------------------------------------------------------
+Thread.run() Method
+----------------------------------------------------------------------------------------------------
+The run() method contains the code executed by the thread. 
+However, calling run() directly does not create a new thread. 
+Instead, it behaves like a normal method call executed in the current thread.
+
+----------------------------------------------------------------------------------------------------
+Multiple Invocations
+----------------------------------------------------------------------------------------------------
+In Java's Multi-Threading Concept, another most important difference between start() and run() method is that 
+we can't call the start() method twice otherwise it will throw an IllegalStateException whereas run() method can be called multiple times as it is just a normal method calling.
+
+Thread.start() vs Thread.run() Method
+
+|-------------------------------------------------------------------------------------------------------------|
+|Feature		  	| start() Method						|	run() Method                                  |
+|-------------------------------------------------------------------------------------------------------------|
+|Thread Creation  	|	Creates a new thread.				|	Does not create a new thread.                 |
+|Execution Context	|	Runs run() in a separate thread.	|	Runs run() in the current thread (main).      |
+|Purpose		  	|	To start concurrent execution.		|   To define the code that a thread will execute.|
+|Behavior		  	|	Allows true parallel execution.		|	Acts like a normal method call.               |
+|Usage Example	  	|	t1.start();							|	t1.run();                                     |
+|-------------------------------------------------------------------------------------------------------------|
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Java Thread.sleep() Method
+-------------------------------------------------------------------------------------------------------------------------------------
+Thread class contains the sleep() method. 
+There are two overloaded methods of sleep() method present in Thread Class, one is with one argument and another one is with two arguments. 
+The sleep() method is used to stop the execution of the current thread (whichever might be executing in the system) for a specific duration of time and after that time duration is over, the thread which is executing earlier starts to execute again.
+
+Syntax
+There are 2 variations of the sleep() method in Java Thread. These are:
+
+	public static void sleep(long millis)
+
+	public static void sleep(long millis, int nanos)
+
+Parameters:
+millis: Duration of time in milliseconds for which thread will sleep
+nanos: This is the additional time in nanoseconds for which we want the thread to sleep. It ranges from 0 to 999999.
+Exceptions: InterruptedException, IllegalArguementException
+
+Important Points:
+Thread.sleep() pauses the current thread's execution.
+Throws InterruptedException if another thread interrupts during sleep.
+Actual sleep duration may vary based on system load; higher load increases sleep time.
+We can use Thread.sleep() method for any thread, i.e., we can do it with the main thread or any other thread that we make programmatically.
+
+Both the sleep() methods are static, meaning they can be accessed using the Thread class.
+Both methods throw a checked exception, so you must handle the exception either using the throws keyword or within a try-catch block.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java Runnable Interface
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+java.lang.Runnable is an interface that is to be implemented by a class whose instances are intended to be executed by a thread.
+Steps to Create a New Thread using Runnable 
+	Create a Runnable implementer and implement the run() method. 
+	Instantiate the Thread class and pass the implementer to the Thread, Thread has a constructor which accepts Runnable instances.
+	Invoke start() of Thread instance, start internally calls run() of the implementer.
+	Invoking start() creates a new Thread that executes the code written in run().
+	Calling run() directly doesn't create and start a new Thread, it will run in the same thread.
+
+Handling Exception in Runnable
+--------------------------------
+Runnable interface can't throw checked exception but RuntimeException can be thrown from the run(). 
+Uncaught exceptions are handled by the exception handler of the thread, if JVM can't handle or catch exceptions, it prints the stack trace and terminates the flow. 
+
+
+
+
+
+
+
+
+ 
